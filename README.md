@@ -9,7 +9,8 @@ Basic
 - on
 - off
 - Promise
-- ...
+- Symbol
+- defineProperty, editable...
 
 DOM
 
