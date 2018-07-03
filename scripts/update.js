@@ -1,6 +1,10 @@
+const path = require('path');
 const fs = require('fs');
 
-fs.readdir('./src', (err, res) => {
+const SRC_PATH = path.resolve(__dirname, '../src');
+const INDX_PATH = path.join(SRC_PATH, 'index.js');
+
+fs.readdir(SRC_PATH, (err, res) => {
   if(err) {
     return console.error(err);
   }
@@ -19,11 +23,11 @@ fs.readdir('./src', (err, res) => {
   utilsStr += ' };\n\n';
 
   try {
-    fs.writeFileSync('./src/index.js', '');
-    fs.appendFileSync('./src/index.js', importStr);
-    fs.appendFileSync('./src/index.js', utilsStr);
-    fs.appendFileSync('./src/index.js', exportStr);
-    fs.appendFileSync('./src/index.js', exportDefaultStr);
+    fs.writeFileSync(INDX_PATH, ''); // clear the content of index.js
+    fs.appendFileSync(INDX_PATH, importStr);
+    fs.appendFileSync(INDX_PATH, utilsStr);
+    fs.appendFileSync(INDX_PATH, exportStr);
+    fs.appendFileSync(INDX_PATH, exportDefaultStr);
   } catch(err) {
     console.error(err);
   }
