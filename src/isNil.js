@@ -2,8 +2,8 @@
   1. null == null
   2. undefined == null
  */
-function isNil(obj) {
-  return null == obj;
+function isNil(val) {
+  return null == val;
 }
 
 export default isNil;

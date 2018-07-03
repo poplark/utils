@@ -1,8 +1,8 @@
-/*
+/* basic
   1. null === null
  */
-function isNull(obj) {
-  return null === obj;
+function isNull(val) {
+  return null === val;
 }
 
 export default isNull;
