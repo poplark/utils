@@ -1,19 +1,8 @@
 /*
-  1. !obj // true
-  2. 'object' === typeof obj // true
-  3. obj instanceof Object  // true
+  1. null === null
  */
 function isNull(obj) {
-  let result = true;
-
-  if(!!obj) {
-    result = false;
-  } else if('object' !== typeof obj) {
-    result = false;
-  } else if(obj instanceof Object) {
-    result = false;
-  }
-  return result;
+  return null === obj;
 }
 
 export default isNull;

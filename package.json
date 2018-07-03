@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "npm run dev && node ./scripts/test.js",
-    "dev": "node ./scripts/dev.js",
-    "build": "node ./scripts/build.js"
+    "update": "node ./scripts/update.js",
+    "dev": "npm run update && node ./scripts/dev.js",
+    "build": "npm run update && node ./scripts/build.js"
   },
   "repository": {
     "type": "git",
