@@ -103,4 +103,8 @@ assert.strictEqual(utils.isFunction(new Function()), true);
 assert.strictEqual(utils.isFunction(new Function('a', 'console.log(a)')), true);
 assert.strictEqual(utils.isFunction(new Function('a', 'b', 'console.log(a + b)')), true);
 
+// isDate
+assert.strictEqual(utils.isDate(new Date()), true);
+assert.strictEqual(utils.isDate('Mon April 23 2012'), false);
+
 console.log(chalk.green('Testing success'));
