@@ -1,1 +1,2 @@
 require('./isType');
+require('./clone');

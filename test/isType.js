@@ -87,14 +87,24 @@ assert.strictEqual(utils.isBoolean(true), true);
 assert.strictEqual(utils.isBoolean(new Boolean()), true);
 
 // isObject
-assert.strictEqual(utils.isObject(new Boolean()), false);
-assert.strictEqual(utils.isObject(new String()), false);
-assert.strictEqual(utils.isObject(new Number()), false);
+assert.strictEqual(utils.isObject(new Boolean()), true);
+assert.strictEqual(utils.isObject(new String()), true);
+assert.strictEqual(utils.isObject(new Number()), true);
 assert.strictEqual(utils.isObject(new Object()), true);
-assert.strictEqual(utils.isObject(new Function('a', 'console.log(a)')), false);
+assert.strictEqual(utils.isObject(new Function('a', 'console.log(a)')), true);
 assert.strictEqual(utils.isObject({}), true);
-assert.strictEqual(utils.isObject(Object.assign(function() {})), false);
-assert.strictEqual(utils.isObject(new Array()), false);
+assert.strictEqual(utils.isObject(Object.assign(function() {})), true);
+assert.strictEqual(utils.isObject(new Array()), true);
+
+// isPlainObject
+assert.strictEqual(utils.isPlainObject(new Boolean()), false);
+assert.strictEqual(utils.isPlainObject(new String()), false);
+assert.strictEqual(utils.isPlainObject(new Number()), false);
+assert.strictEqual(utils.isPlainObject(new Object()), true);
+assert.strictEqual(utils.isPlainObject(new Function('a', 'console.log(a)')), false);
+assert.strictEqual(utils.isPlainObject({}), true);
+assert.strictEqual(utils.isPlainObject(Object.assign(function() {})), false);
+assert.strictEqual(utils.isPlainObject(new Array()), false);
 
 // isFunction
 assert.strictEqual(utils.isFunction(function() {}), true);
@@ -107,4 +117,4 @@ assert.strictEqual(utils.isFunction(new Function('a', 'b', 'console.log(a + b)')
 assert.strictEqual(utils.isDate(new Date()), true);
 assert.strictEqual(utils.isDate('Mon April 23 2012'), false);
 
-console.log(chalk.green('Testing success'));
+console.log(chalk.green('Type testing success'));
