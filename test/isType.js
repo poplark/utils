@@ -87,13 +87,20 @@ assert.strictEqual(utils.isBoolean(true), true);
 assert.strictEqual(utils.isBoolean(new Boolean()), true);
 
 // isObject
-assert.strictEqual(utils.isObject(new Boolean()), true);
-assert.strictEqual(utils.isObject(new String()), true);
-assert.strictEqual(utils.isObject(new Number()), true);
+assert.strictEqual(utils.isObject(new Boolean()), false);
+assert.strictEqual(utils.isObject(new String()), false);
+assert.strictEqual(utils.isObject(new Number()), false);
 assert.strictEqual(utils.isObject(new Object()), true);
-assert.strictEqual(utils.isObject(new Function('a', 'console.log(a)')), true);
+assert.strictEqual(utils.isObject(new Function('a', 'console.log(a)')), false);
 assert.strictEqual(utils.isObject({}), true);
-assert.strictEqual(utils.isObject(Object.assign(function() {})), true);
-assert.strictEqual(utils.isObject(new Array()), true);
+assert.strictEqual(utils.isObject(Object.assign(function() {})), false);
+assert.strictEqual(utils.isObject(new Array()), false);
+
+// isFunction
+assert.strictEqual(utils.isFunction(function() {}), true);
+assert.strictEqual(utils.isFunction(() => {}), true);
+assert.strictEqual(utils.isFunction(new Function()), true);
+assert.strictEqual(utils.isFunction(new Function('a', 'console.log(a)')), true);
+assert.strictEqual(utils.isFunction(new Function('a', 'b', 'console.log(a + b)')), true);
 
 console.log(chalk.green('Testing success'));

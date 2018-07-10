@@ -4,11 +4,13 @@ const fs = require('fs');
 const SRC_PATH = path.resolve(__dirname, '../src');
 const INDX_PATH = path.join(SRC_PATH, 'index.js');
 
+const JS_FILE_REGEX = /.js$/;
+
 fs.readdir(SRC_PATH, (err, res) => {
   if(err) {
     return console.error(err);
   }
-  let files = res.filter(item => item !== 'index.js');
+  let files = res.filter(item => item !== 'index.js' && JS_FILE_REGEX.test(item));
   let importStr = '', //import isNil from './isNil';
     exportStr = '', // export { isNil };
     utilsStr = '\nconst utils = { ',

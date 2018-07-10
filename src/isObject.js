@@ -1,12 +1,12 @@
+import getTag, { objectTag } from './base/getTag';
+
 /* basic
   1. {}
   2. new Object()
   3. Object.assign()
-  4. function() {}
  */
 function isObject(val) {
-  let type = typeof val;
-  return null !== val && ('object' === type || 'function' === type);
+  return 'object' === typeof val && getTag(val) === objectTag;
 }
 
 export default isObject;
