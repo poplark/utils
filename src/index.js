@@ -10,10 +10,11 @@ import isNull from './isNull';
 import isNumber from './isNumber';
 import isObject from './isObject';
 import isPlainObject from './isPlainObject';
+import isRegex from './isRegex';
 import isString from './isString';
 import isUndefined from './isUndefined';
 
-const utils = { clone,cloneDeep,isArray,isBoolean,isDate,isFunction,isNaN,isNil,isNull,isNumber,isObject,isPlainObject,isString,isUndefined };
+const utils = { clone,cloneDeep,isArray,isBoolean,isDate,isFunction,isNaN,isNil,isNull,isNumber,isObject,isPlainObject,isRegex,isString,isUndefined };
 
 export { clone };
 export { cloneDeep };
@@ -27,6 +28,7 @@ export { isNull };
 export { isNumber };
 export { isObject };
 export { isPlainObject };
+export { isRegex };
 export { isString };
 export { isUndefined };
 export default utils;

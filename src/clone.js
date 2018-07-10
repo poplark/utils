@@ -3,6 +3,7 @@ import isObject from './isObject';
 import isArray from './isArray';
 import isPlainObject from './isPlainObject';
 import isFunction from './isFunction';
+import getTag, { boolTag, stringTag, numberTag, dateTag, regexTag } from './base/getTag';
 
 /*
  * clone
@@ -52,8 +53,21 @@ function clone(data, isDeep) {
   } else if(isFunction(data)) {
     result = cloneFunc(data);
   } else {
-    // todo - other Object Like (String, Number, Date and so on)
-    result = data;
+    // [object Boolean], [object String], [object Number], [object Date], [object RegExp]
+    let tag = getTag(data);
+    if(boolTag == tag
+      || stringTag == tag
+      || numberTag == tag
+      || dateTag == tag
+      || regexTag == tag) {
+      if(isDeep) {
+        result = new data.constructor(data.valueOf());
+      } else {
+        result = data;
+      }
+    } else {
+      throw new Error(`Unable to copy the data! Its type - ${tag} isn't supported.`);
+    }
   }
   return result;
 }

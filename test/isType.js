@@ -113,6 +113,10 @@ assert.strictEqual(utils.isFunction(new Function()), true);
 assert.strictEqual(utils.isFunction(new Function('a', 'console.log(a)')), true);
 assert.strictEqual(utils.isFunction(new Function('a', 'b', 'console.log(a + b)')), true);
 
+// isRegex
+assert.strictEqual(utils.isRegex(/aaa/), true);
+assert.strictEqual(utils.isRegex(new RegExp('aa')), true);
+
 // isDate
 assert.strictEqual(utils.isDate(new Date()), true);
 assert.strictEqual(utils.isDate('Mon April 23 2012'), false);

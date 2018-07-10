@@ -14,6 +14,7 @@ const objectTag   = '[object Object]';
 // 引用类型
 const arrayTag    = '[object Array]';
 const funcTag     = '[object Function]';
+const regexTag    = '[object RegExp]';
 const dateTag     = '[object Date]';
 
 /*
@@ -31,4 +32,4 @@ function getTag(val) {
 export default getTag;
 
 export { boolTag, nullTag, undefinedTag, numberTag, stringTag, symbolTag };
-export { objectTag, arrayTag, funcTag, dateTag };
+export { objectTag, arrayTag, funcTag, regexTag, dateTag };
