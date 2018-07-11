@@ -4,7 +4,6 @@
 
 Basic
 
-- clone and deep clone
 - debounce
 - on
 - off
