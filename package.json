@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "js utils",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "npm run dev && node ./scripts/test.js",
     "update": "node ./scripts/update.js",
