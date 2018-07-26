@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "wukong-utils",
   "version": "0.0.1",
   "description": "js utils",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/poplark/utils.git"
+    "url": "git+https://github.com/poplark/wukong-utils.git"
   },
   "keywords": [
     "js",
@@ -23,9 +23,9 @@
   "author": "poplark",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/poplark/utils/issues"
+    "url": "https://github.com/poplark/wukong-utils/issues"
   },
-  "homepage": "https://github.com/poplark/utils#readme",
+  "homepage": "https://github.com/poplark/wukong-utils#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
