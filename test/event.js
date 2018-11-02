@@ -8,4 +8,4 @@ const { on, off } = event;
 console.log(chalk.yellow('on function: ', on));
 console.log(chalk.yellow('off function: ', off));
 
-console.log(chalk.green('Clone testing success'));
+console.log(chalk.green('Event testing success'));

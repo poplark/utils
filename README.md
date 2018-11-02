@@ -1,4 +1,4 @@
-# utils
+# wukong-utils
 
 ## Commands
 
@@ -34,5 +34,5 @@ DOM
 
 - getClientRectange
 - vertical center
-- debounce
+- throttle - [节流](https://blog.csdn.net/duola8789/article/details/78871789)
 - ...

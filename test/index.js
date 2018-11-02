@@ -9,6 +9,7 @@ if(PART) {
 } else {
   require('./isType');
   require('./clone');
-  require('./event');
+  require('./debounce');
+  // require('./event'); // 不符合实际的测试用例
 }
 
