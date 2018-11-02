@@ -1,9 +1,10 @@
-const hasOwnProperty = Object.prototype.hasOwnProperty;
 import isObject from './isObject';
 import isArray from './isArray';
 import isPlainObject from './isPlainObject';
 import isFunction from './isFunction';
 import getTag, { boolTag, stringTag, numberTag, dateTag, regexTag } from './base/getTag';
+
+const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /*
  * clone

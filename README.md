@@ -1,5 +1,27 @@
 # utils
 
+## Commands
+
+1. `npm run update`
+
+import xx.js (an util) into index.js automatically
+
+2. `npm run dev`
+
+export development version into `dist` folder
+
+***The `dist` folder is the temporary folder.***
+
+3. `npm test`
+
+run test function base on the lib in `dist` folder
+
+`npm run test -- --part xxx` will run `xxx` test only
+
+4. `npm run build`
+
+build the src file into `lib` folder
+
 ## Todo
 
 Basic
@@ -13,6 +35,4 @@ DOM
 - getClientRectange
 - vertical center
 - debounce
-- on
-- off
 - ...

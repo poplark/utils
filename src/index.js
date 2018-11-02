@@ -1,5 +1,6 @@
 import clone from './clone';
 import cloneDeep from './cloneDeep';
+import event from './event';
 import isArray from './isArray';
 import isBoolean from './isBoolean';
 import isDate from './isDate';
@@ -14,10 +15,11 @@ import isRegex from './isRegex';
 import isString from './isString';
 import isUndefined from './isUndefined';
 
-const utils = { clone,cloneDeep,isArray,isBoolean,isDate,isFunction,isNaN,isNil,isNull,isNumber,isObject,isPlainObject,isRegex,isString,isUndefined };
+const utils = { clone,cloneDeep,event,isArray,isBoolean,isDate,isFunction,isNaN,isNil,isNull,isNumber,isObject,isPlainObject,isRegex,isString,isUndefined };
 
 export { clone };
 export { cloneDeep };
+export { event };
 export { isArray };
 export { isBoolean };
 export { isDate };
