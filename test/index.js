@@ -10,6 +10,7 @@ if(PART) {
   require('./isType');
   require('./clone');
   require('./debounce');
+  require('./throttle');
   // require('./event'); // 不符合实际的测试用例
 }
 

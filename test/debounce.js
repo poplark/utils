@@ -61,7 +61,7 @@ debounce3.cancel();
 
 /*
   4. 清除函数 - 连续调用三次 debounced 函数
-    50ms 后，调用清除函数，执行测试函数时应该小于等待时间
+    50ms 后，调用清除函数，将立即执行测试函数
  */
 const start4 = Date.now();
 function test4() {
@@ -77,8 +77,8 @@ debounce4(3);
 setTimeout(debounce4.flush, 50);
 
 /*
-  5. 立即执行 - 连续调用三次 debounced 函数
-    调用清除函数，测试函数将得不到执行
+  5. 立即执行 - 先调用一次，100ms后，再调用一次
+    将立即执行，100多 ms 后再执行一次
  */
 const start5 = Date.now();
 function test5(x) {
@@ -95,11 +95,39 @@ function test5(x) {
   }
   console.log('debounce test case5 lasts: ', Date.now() - start);
 }
-const debounce5 = debounce(test5, 100, true);
+const debounce5 = debounce(test5, 100, {immediate: true});
 debounce5(1);
 setTimeout(() => {
   debounce5(2);
 }, 100);
+
+/*
+  6. 立即执行 - 先调用一次，80ms后，再调用一次, 80ms 后再调用一次
+    将立即执行，100多 ms 后再执行一次
+ */
+const start6 = Date.now();
+function test6(x) {
+  const duration = Date.now() - start6;
+  console.log('debounce test case6 : ', duration, x);
+  switch(x) {
+    case 2:
+      assert.strictEqual((duration - 120) < 10, true);
+      break;
+    case 3:
+      assert.strictEqual((duration - 260) < 15, true); // 受前面代码执行速度影响，可能会超过10ms，故用15ms
+      break;
+    default:
+  }
+  console.log('debounce test case6 lasts: ', Date.now() - start);
+}
+const debounce6 = debounce(test6, 100, {maxWait: 120});
+debounce6(1);
+setTimeout(() => {
+  debounce6(2);
+  setTimeout(() => {
+    debounce6(3)
+  }, 80);
+}, 80);
 
 setTimeout(() => {
   console.log('debounce total lasts: ', Date.now() - start);

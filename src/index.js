@@ -15,8 +15,9 @@ import isPlainObject from './isPlainObject';
 import isRegex from './isRegex';
 import isString from './isString';
 import isUndefined from './isUndefined';
+import throttle from './throttle';
 
-const utils = { clone,cloneDeep,debounce,event,isArray,isBoolean,isDate,isFunction,isNaN,isNil,isNull,isNumber,isObject,isPlainObject,isRegex,isString,isUndefined };
+const utils = { clone,cloneDeep,debounce,event,isArray,isBoolean,isDate,isFunction,isNaN,isNil,isNull,isNumber,isObject,isPlainObject,isRegex,isString,isUndefined,throttle };
 
 export { clone };
 export { cloneDeep };
@@ -35,4 +36,5 @@ export { isPlainObject };
 export { isRegex };
 export { isString };
 export { isUndefined };
+export { throttle };
 export default utils;
