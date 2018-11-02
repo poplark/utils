@@ -1,4 +1,4 @@
-const DEFAULT_WAIT = 300;
+const DEFAULT_WAIT = 0;
 
 /*
   immediate
